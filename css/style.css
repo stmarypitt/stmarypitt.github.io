@@ -135,7 +135,7 @@ html,body
 
 .open-title {
     position: absolute;
-    top: 0;
+    top: -100px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -146,6 +146,21 @@ html,body
     font-family: 'Poiret One', cursive;
     font-size: 5.5vw;
     width: 90vw;
+}
+
+.subtext {
+    position: absolute;
+    top: 400px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 30%;
+    margin: auto;
+    color: white;
+    font-family: 'Poiret One', cursive;
+    font-size: 2.5vw;
+    width: 50vw;
 }
 
 /*=== Trigger  ===*/
@@ -238,6 +253,11 @@ animation-delay: 0.4s;
 @media(max-width: 500px) {
     .open-title {
         font-size: 50px;
+    }
+    .subtext {
+        top: 350px;
+        font-size: 5vw;
+        width: 80vw;
     }
 }
 
