@@ -1,4 +1,10 @@
 /*Calling jQuery stuff is all in here:*/
+$(document).ready(function() {
+  $(".closethis").click(function() {
+    $(".announcement").fadeOut(300);
+  });
+});
+
 $(function() {
 var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
 
