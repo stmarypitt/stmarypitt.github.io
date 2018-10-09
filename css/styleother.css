@@ -86,7 +86,22 @@ body {
 @media(max-width: 900px) {
     .page-title {
         top:2vh;
+    }
+
+    .announcement {
+        margin-left: -40%;
+        width: 80%;
+        top: 0px;
+        height: 100%;
+        overflow: scroll;
+    }
 }
+
+@media(max-width: 466px) {
+    .announcement {
+        margin-left: -45%;
+        width: 90%;
+    }
 }
 
 
