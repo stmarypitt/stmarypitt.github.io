@@ -59,8 +59,8 @@
                         <li><a href="retreats.html">RETREATS</a></li>
                         <li><a href="about.html">ABOUT</a></li>
                         <li><a href="subscribe.html">SUBSCRIBE</a></li>
-                        <li class="active"><a href="contact.html">CONTACT</a></li>
-                        <li><a href="donate.html">DONATE</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                        <li class="active"><a href="donate.html">DONATE</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -72,46 +72,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Need to find us? Click <a target = "_blank" href="https://www.google.com/maps/dir//995+Melrose+Ave,+Ambridge,+PA+15003/@40.5915862,-80.2314983,17z/data=!4m16!1m7!3m6!1s0x883466f91e06486f:0xb090ed194b197e2a!2s995+Melrose+Ave,+Ambridge,+PA+15003!3b1!8m2!3d40.5915821!4d-80.2293043!4m7!1m0!1m5!1m1!1s0x883466f91e06486f:0xb090ed194b197e2a!2m2!1d-80.2293043!2d40.5915821">here</a> to enter your point of origin for directions! </p>
-                <div class = "mapView">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3029.7675754249044!2d-80.22709952682426!3d40.590885496596016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x883466f91e06486f%3A0xb090ed194b197e2a!2s995+Melrose+Ave%2C+Ambridge%2C+PA+15003!3m2!1d40.5915821!2d-80.2293043!5e0!3m2!1sen!2sus!4v1471816332500" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-            <br>
+                <p>Want to donate? Donations can be sent to P.O. Box 755, Coraopolis, PA 15108, or you can donate online below!</p>
             </div> 
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Have any questions about our services or anything you've found on our site? Let us know here, email us at <a href="mailto:stmarypitt@gmail.com">stmarypitt@gmail.com</a>, or call us at (412) 788-4532!</p>
-                <form name="sentMessage" action = "https://formspree.io/stmarypitt@gmail.com" method="POST" novalidate>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name." name = "PersonName">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Email Address</label>
-                            <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address." name = "_replyto">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>What Would You Like To Tell Us?</label>
-                            <textarea rows="5" class="form-control" placeholder="What Would You Like To Tell Us?" id="message" required data-validation-required-message="Please enter a message." name = "PersonQuestion"></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <br>
-                    <div id="success"></div>
-                    <div class="row">
-                        <div class="form-group col-xs-12">
-                            <input type="text" name="_gotcha" style="display:none" />
-                            <input type="hidden" name="_next" value="thanks.html" />
-                            <button type="submit" class="btn btn-default">Let Us Know!</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_s-xclick" />
+                    <input type="hidden" name="hosted_button_id" value="6G6BJ42LBDXAW" />
+                    <input style="width: 130px;" type="image" src="http://stmarypittsburgh.org/img/donate.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                    <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                    </form>
+            </div> 
         </div>
     </div>
 
