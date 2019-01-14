@@ -77,7 +77,8 @@ body {
 
 .register {
     padding: 15px 25px;
-    background: rgb(20, 197, 129);
+    background: rgb(22,195,116);
+    background: linear-gradient(135deg, rgba(22,195,116,1) 0%, rgba(38,154,103,1) 28%, rgba(22,205,183,1) 100%);
     color: white;
     font-family: 'Montserrat';
     border-radius: 5px;
