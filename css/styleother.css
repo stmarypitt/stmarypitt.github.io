@@ -86,6 +86,10 @@ body {
     font-weight: 600;
 }
 
+.register-wrapper {
+    text-align: center;
+}
+
 .register:link, .register:visited, .register:hover, .register:active {
     color: white;
 }
