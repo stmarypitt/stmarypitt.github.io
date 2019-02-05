@@ -94,6 +94,45 @@ body {
     color: white;
 }
 
+.bishoy {
+    width: 30%; 
+    margin-bottom: 40px;
+}
+
+.bishoytext {
+    display: inline-block;
+    width: 65%;
+    padding-left: 20px;
+}
+
+.daniel {
+    width: 30%;
+}
+
+.danieltext {
+    width: 65%; 
+    float: right; 
+    margin-top: 0px;
+}
+
+@media(max-width: 750px) {
+    .bishoy, .daniel {
+        width: 70%;
+        margin: 0;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+
+    .bishoytext, .danieltext {
+        display: block;
+        width: 100%;
+        padding-left: 10px;
+        padding-top: 20px;
+        margin: auto;
+        float: none;
+    }
+}
+
 
 
 @media(max-width: 875px) {
