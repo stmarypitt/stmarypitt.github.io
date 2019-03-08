@@ -76,6 +76,12 @@ span {
     margin-bottom: 7px;
 }
 
+.quote {
+    margin-left: 7%;
+    margin-right: 7%;
+    text-align: center;
+}
+
 .day {
     margin-left: 7%;
     margin-right: 7%;
@@ -99,6 +105,26 @@ span {
 
 .second {
     margin-top: 15px;
+}
+
+.bigquote {
+    font-size: 100px;
+    margin-bottom: -60px;
+    margin-top: -20px;
+}
+
+.actualquote {
+    font-family: 'Raleway';
+    font-size: 20px;
+}
+
+.unknown {
+    color: rgb(170, 62, 212);
+    font-weight: 600;
+}
+
+.download {
+    display: inline-block;
 }
 
 .color1 {
@@ -133,6 +159,10 @@ span {
     padding-bottom: 20px;
 }
 
+.hymn {
+    width: 100%;
+}
+
 @media(min-width: 550px) {
     .main {
         width: 40%;
@@ -162,5 +192,9 @@ span {
 
     .main {
         padding-bottom: 40px;
+    }
+
+    .hymn {
+        width: 40%;
     }
 }
