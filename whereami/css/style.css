@@ -102,23 +102,23 @@ span {
 }
 
 .color1 {
-    background: rgb(15, 219, 100, 0.5);
+    background: rgba(15, 219, 100, 0.5);
 }
 
 .color2 {
-    background: rgb(45, 228, 228, 0.5);
+    background: rgba(45, 228, 228, 0.5);
 }
 
 .color3 {
-    background: rgb(240, 236, 10, 0.5);
+    background: rgba(240, 236, 10, 0.5);
 }
 
 .color4 {
-    background: rgb(240, 133, 10, 0.5);
+    background: rgba(240, 133, 10, 0.5);
 }
 
 .color5 {
-    background: rgb(195, 112, 228, 0.5);
+    background: rgba(195, 112, 228, 0.5);
 }
 
 .lectures {
