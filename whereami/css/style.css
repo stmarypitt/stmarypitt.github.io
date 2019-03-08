@@ -1,0 +1,130 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Montserrat;
+    font-weight: 300;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+    display: block;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+body {
+    background: url('../img/bg.png');
+    background-size: 100%;
+}
+
+span {
+    display: block;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.main-wrap {
+    height: 100vh;
+}
+
+.main {
+    width: 86%;
+    margin: 0px auto;
+    text-align: center;
+    background: black;
+    border: solid 2px black;
+    padding: 20px;
+    padding-top: 0px;
+    position: relative;
+    top: 50%;
+    transform: perspective(1px) translateY(-50%);
+}
+
+.link {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.linkz {
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.textnum {
+    margin-bottom: 20px;
+}
+
+.schedule {
+    width: 100%;
+}
+
+.scheduletitle {
+    margin-left: 7%;
+    margin-bottom: 7px;
+}
+
+.day {
+    margin-left: 7%;
+    margin-right: 7%;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.location {
+    font-size: 12px;
+}
+
+.subevent {
+    margin-bottom: 3px;
+}
+
+.event {
+    width: 100%;
+    padding: 10px 7%;
+    margin-bottom: 5px;
+}
+
+.second {
+    margin-top: 15px;
+}
+
+.color1 {
+    background: rgb(15, 219, 100, 0.5);
+}
+
+.color2 {
+    background: rgb(45, 228, 228, 0.5);
+}
+
+.color3 {
+    background: rgb(240, 236, 10, 0.5);
+}
+
+.color4 {
+    background: rgb(240, 133, 10, 0.5);
+}
+
+.color5 {
+    background: rgb(195, 112, 228, 0.5);
+}
+
+.lectures {
+    padding-top: 30px;
+}
+
+.points {
+    padding: 0px 7%;
+}
+
+.songs {
+    padding-bottom: 20px;
+}
