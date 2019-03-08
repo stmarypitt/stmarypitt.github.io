@@ -22,6 +22,10 @@ span {
     display: block;
 }
 
+.image {
+    width: 50%;
+}
+
 .inline {
     display: inline-block;
 }
@@ -127,4 +131,36 @@ span {
 
 .songs {
     padding-bottom: 20px;
+}
+
+@media(min-width: 550px) {
+    .main {
+        width: 40%;
+    }
+
+    .scheduletitle {
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+
+    .day {
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+
+    .event {
+        padding: 10px 30%;
+    }
+
+    .points {
+        padding: 0px 30%;
+    }
+
+    .image {
+        width: 66%;
+    }
+
+    .main {
+        padding-bottom: 40px;
+    }
 }
