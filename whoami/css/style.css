@@ -23,7 +23,7 @@ span {
 }
 
 .image {
-    width: 80%;
+    width: 100%;
 }
 
 .inline {
@@ -38,7 +38,7 @@ span {
     width: 86%;
     margin: 0px auto;
     text-align: center;
-    background: black;
+    background: white;
     border: solid 2px black;
     padding: 20px;
     padding-top: 0px;
@@ -165,7 +165,7 @@ span {
 
 @media(min-width: 550px) {
     .main {
-        width: 40%;
+        width: 50%;
     }
 
     .scheduletitle {
@@ -187,7 +187,7 @@ span {
     }
 
     .image {
-        width: 66%;
+        width: 100%;
     }
 
     .main {
