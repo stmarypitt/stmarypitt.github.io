@@ -160,20 +160,66 @@
                             </div> -->
 		</div>
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <!-- <h1 class="section-heading">Winter Youth Retreat</h1>
-                <p>Join us for our 10th Annual Winter Youth retreat! With the blessing of H.G. Bishop Karas, the retreat will be open to the whole diocese (DE, PA, MD, WV). The retreat is hosted by Fr. Bishoy Mikhail, Fr. Daniel Nakhla, and St. Mary's Coptic Orthodox Church in Pittsburgh, PA.</p>
+                <h1 class="section-heading">Winter Youth Retreat</h1>
+                <p>Join us for our 11th Annual Winter Youth retreat under the blessing of H.G. Bishop Karas. The retreat is hosted by Fr. Bishoy Mikhail, Fr. Daniel Nakhla, and St. Mary's Coptic Orthodox Church in Pittsburgh, PA.</p>
 
-                <p>Theme: Identity; "For our citizenship is in heaven, from which we also eagerly wait for the Savior, the Lord Jesus Christ." - Philippians 3:20<br>
-                When: Feb 28 - Mar 1, 2020<br>
-                For whom: Middle School, High School, and College. <strong>Middle Schoolers must be 13 years of age or older by Feb. 28 to register.</strong><br>
+                <p>Theme: Testing our Faith<br>
+                When: Mar 4-6, 2022<br>
+                For whom: Middle School and High School.<br>
                 Location: Seven Springs Resort, Champion PA</p>
-
-                <p>Our guest speaker for the Middle & High School group will be Fr. Daniel Nakhla of St. Mary's in Pittsburgh, and our guest speaker for the college group will be Fr. David Milad of St. Barnabas & St. Susanna in Baltimore.</p>
-                <p>The registration fee is $120 per person for lodging, outdoor activities, & food. Transportation and chaperones for middle/high school should be organized by each church separately.</p>
+         
+                <p>The registration fee is $125 per person for lodging, outdoor activities, & food. We will be arranging rides both from church and from downtown Pittsburgh. <strong>More information will be sent via text message after registration closes.</strong></p>
                 <p>Space is limited, so it is to your advantage to register as early as possible! The deadline to register is <strong>February 23rd</strong>. Please pray for a spiritually fruitful retreat, and God willing, we will see you there.</p>
-                <div class="register-wrapper"><a class="register" href="https://forms.gle/oSFRU2Px17ZN6EAL7" target="_blank">REGISTER HERE</a></div>
-                <p>After registering, <strong>please pay $120 to Morcos Habib via check or Venmo Chris Saba (@cysdds2009).</strong><br>
+                <div class="register-wrapper"><a class="register" href="https://forms.gle/z6TMKVXy56WmQSak6" target="_blank">REGISTER HERE</a></div>
+                <p>After registering, <strong>please pay $125 to Morcos Habib via check or via Paypal below.</strong><br>
                 </p>
+			
+		<div id="smart-button-container">
+		      <div style="text-align: center;">
+			<div id="paypal-button-container"></div>
+		      </div>
+		    </div>
+		  <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+		  <script>
+		    function initPayPalButton() {
+		      paypal.Buttons({
+			style: {
+			  shape: 'rect',
+			  color: 'gold',
+			  layout: 'vertical',
+			  label: 'paypal',
+
+			},
+
+			createOrder: function(data, actions) {
+			  return actions.order.create({
+			    purchase_units: [{"description":"Seven Springs 2022 Registration","amount":{"currency_code":"USD","value":125}}]
+			  });
+			},
+
+			onApprove: function(data, actions) {
+			  return actions.order.capture().then(function(orderData) {
+
+			    // Full available details
+			    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+			    // Show a success message within this page, e.g.
+			    const element = document.getElementById('paypal-button-container');
+			    element.innerHTML = '';
+			    element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+			    // Or go to another URL:  actions.redirect('thank_you.html');
+
+			  });
+			},
+
+			onError: function(err) {
+			  console.log(err);
+			}
+		      }).render('#paypal-button-container');
+		    }
+		    initPayPalButton();
+		  </script>
 
                 <p>To get directions to Seven Springs, click <a target = "_blank" href="https://www.google.com/maps/dir//Seven+Springs+Mountain+Resort/@40.0229768,-79.2998919,17z/data=!3m1!4b1!4m5!3m4!1s0x89cad17abd9a35e5:0xe64df0643e194e61!8m2!3d40.0229768!4d-79.2977032">here</a> and enter your point of origin! </p>
                 <div class = "mapView">
@@ -217,7 +263,7 @@
                 10:15 AM - Lecture  III<br>
                 10:55 AM - Discussion Groups<br>
                 11:20 AM - Present one point<br>
-                12:00 PM - Check out and go back to the church (arrive at church by 2pm)</p> -->
+                12:00 PM - Check out and go back to the church (arrive at church by 2pm)</p>
                 <!--
                 <h1 class="section-heading">Family Retreat</h1>
                 <p>Our family retreat normally takes place in May. Come back in March/April for more information!</p> -->
