@@ -313,85 +313,54 @@
                 
                 <!--<p>Registration is now closed. If you've registered, but haven't yet paid, you can pay below. Please email <a href="mailto:thelogosretreat@gmail.com">thelogosretreat@gmail.com</a> with any questions!</p> !-->
                
-                <script src="https://www.paypal.com/sdk/js?client-id=AVoVLOcHfH0TxbEunl70XqcITtTuHAzOWy1H2eX3YN2bYHpSxyEv0fCkGN192hBcKF4F3e1ZKWoHEBe-&currency=USD&intent=capture"></script>
-
-        <script>
-          const fundingSources = [
-            paypal.FUNDING.PAYPAL,
-              paypal.FUNDING.VENMO,
-              paypal.FUNDING.CARD
-            ]
-
-          for (const fundingSource of fundingSources) {
-            const paypalButtonsComponent = paypal.Buttons({
-              fundingSource: fundingSource,
-
-              // optional styling for buttons
-              // https://developer.paypal.com/docs/checkout/standard/customize/buttons-style-guide/
-              style: {
-                shape: 'rect',
-                height: 40,
-              },
-
-              // set up the transaction
-              createOrder: (data, actions) => {
-                // pass in any options from the v2 orders create call:
-                // https://developer.paypal.com/api/orders/v2/#orders-create-request-body
-                const createOrderPayload = {
-                  purchase_units: [
-			  {
-				  "description":"Logos - Triple",
-				  "amount": {
-					  "currency_code":"USD",
-					  "value":135}
-			  },
-                   	  {
-				  "description":"Logos - Double",
-				  "amount": {
-					  "currency_code":"USD",
-					  "value":155}
-			  },
-			  {
-				  "description":"Logos - Single",
-				  "amount": {
-					  "currency_code":"USD",
-					  "value":255}
-			  },
-                  ],
-                }
-
-                return actions.order.create(createOrderPayload)
-              },
-
-              // finalize the transaction
-              onApprove: (data, actions) => {
-                const captureOrderHandler = (details) => {
-                  const payerName = details.payer.name.given_name
-                  console.log('Transaction completed!')
-                }
-
-                return actions.order.capture().then(captureOrderHandler)
-              },
-
-              // handle unrecoverable errors
-              onError: (err) => {
-                console.error(
-                  'An error prevented the buyer from checking out with PayPal',
-                )
-              },
-            })
-
-            if (paypalButtonsComponent.isEligible()) {
-              paypalButtonsComponent
-                .render('#paypal-button-container')
-                .catch((err) => {
-                  console.error('PayPal Buttons failed to render')
-                })
-            } else {
-              console.log('The funding source is ineligible')
-            }
-          }
-        </script>
+               <script src="https://www.paypal.com/sdk/js?client-id=AVoVLOcHfH0TxbEunl70XqcITtTuHAzOWy1H2eX3YN2bYHpSxyEv0fCkGN192hBcKF4F3e1ZKWoHEBe-&currency=USD"></script>
+		    <!-- Set up a container element for the button -->
+		    <div id="paypal-button-container"></div>
+		    <script>
+		      paypal.Buttons({
+			// Sets up the transaction when a payment button is clicked
+			createOrder: (data, actions) => {
+			  return actions.order.create({
+			    "purchase_units": [{
+				    "amount": {
+				      "currency_code": "USD",
+				      "value": "100",
+				      "breakdown": {
+					"item_total": {  /* Required when including the `items` array */
+					  "currency_code": "USD",
+					  "value": "100"
+					}
+				      }
+				    },
+				    "items": [
+				      {
+					"name": "First Product Name", /* Shows within upper-right dropdown during payment approval */
+					"description": "Optional descriptive text..", /* Item details will also be in the completed paypal.com transaction view */
+					"unit_amount": {
+					  "currency_code": "USD",
+					  "value": "50"
+					},
+					"quantity": "2"
+				      },
+				    ]
+				  }]
+			  });
+			},
+			// Finalize the transaction after payer approval
+			onApprove: (data, actions) => {
+			  return actions.order.capture().then(function(orderData) {
+			    // Successful capture! For dev/demo purposes:
+			    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+			    const transaction = orderData.purchase_units[0].payments.captures[0];
+			    alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
+			    // When ready to go live, remove the alert and show a success message within this page. For example:
+			    // const element = document.getElementById('paypal-button-container');
+			    // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+			    // Or go to another URL:  actions.redirect('thank_you.html');
+			  });
+			}
+		      }).render('#paypal-button-container');
+		    </script>
                 
                 
                 <!-- <h1 class="section-heading">Past Lectures</h1> -->
