@@ -313,146 +313,94 @@
                 
                 <!--<p>Registration is now closed. If you've registered, but haven't yet paid, you can pay below. Please email <a href="mailto:thelogosretreat@gmail.com">thelogosretreat@gmail.com</a> with any questions!</p> !-->
                
-                <script src="https://www.paypal.com/sdk/js?client-id=AVoVLOcHfH0TxbEunl70XqcITtTuHAzOWy1H2eX3YN2bYHpSxyEv0fCkGN192hBcKF4F3e1ZKWoHEBe-&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
-		  <script>
-		    function initPayPalButton() {
-		      paypal.Buttons({
-			style: {
-			  shape: 'rect',
-			  color: 'gold',
-			  layout: 'vertical',
-			  label: 'paypal',
+                <script src="https://www.paypal.com/sdk/js?client-id=AVoVLOcHfH0TxbEunl70XqcITtTuHAzOWy1H2eX3YN2bYHpSxyEv0fCkGN192hBcKF4F3e1ZKWoHEBe-&currency=USD&intent=capture"></script>
 
-			},
+        <script>
+          const fundingSources = [
+            paypal.FUNDING.PAYPAL,
+              paypal.FUNDING.VENMO,
+              paypal.FUNDING.CARD
+            ]
 
-			createOrder: function(data, actions) {
-			  return actions.order.create({
-			    purchase_units: [
-				    {"description":"Logos - Triple","amount":{"currency_code":"USD","value":135}},
-			    	    {"description":"Logos - Double","amount":{"currency_code":"USD","value":155}},
-			    	    {"description":"Logos - Single","amount":{"currency_code":"USD","value":225}}]
-			  });
-			},
+          for (const fundingSource of fundingSources) {
+            const paypalButtonsComponent = paypal.Buttons({
+              fundingSource: fundingSource,
 
-			onApprove: function(data, actions) {
-			  return actions.order.capture().then(function(orderData) {
+              // optional styling for buttons
+              // https://developer.paypal.com/docs/checkout/standard/customize/buttons-style-guide/
+              style: {
+                shape: 'rect',
+                height: 40,
+              },
 
-			    // Full available details
-			    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+              // set up the transaction
+              createOrder: (data, actions) => {
+                // pass in any options from the v2 orders create call:
+                // https://developer.paypal.com/api/orders/v2/#orders-create-request-body
+                const createOrderPayload = {
+                  purchase_units: [
+			  {
+				  "description":"Logos - Triple",
+				  "amount": {
+					  "currency_code":"USD",
+					  "value":135}
+			  },
+                   	  {
+				  "description":"Logos - Double",
+				  "amount": {
+					  "currency_code":"USD",
+					  "value":155}
+			  },
+			  {
+				  "description":"Logos - Single",
+				  "amount": {
+					  "currency_code":"USD",
+					  "value":255}
+			  },
+                  ],
+                }
 
-			    // Show a success message within this page, e.g.
-			    const element = document.getElementById('paypal-button-container');
-			    element.innerHTML = '';
-			    element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                return actions.order.create(createOrderPayload)
+              },
 
-			    // Or go to another URL:  actions.redirect('thank_you.html');
+              // finalize the transaction
+              onApprove: (data, actions) => {
+                const captureOrderHandler = (details) => {
+                  const payerName = details.payer.name.given_name
+                  console.log('Transaction completed!')
+                }
 
-			  });
-			},
+                return actions.order.capture().then(captureOrderHandler)
+              },
 
-			onError: function(err) {
-			  console.log(err);
-			}
-		      }).render('#paypal-button-container');
-		    }
-		    initPayPalButton();
-		  </script>
+              // handle unrecoverable errors
+              onError: (err) => {
+                console.error(
+                  'An error prevented the buyer from checking out with PayPal',
+                )
+              },
+            })
+
+            if (paypalButtonsComponent.isEligible()) {
+              paypalButtonsComponent
+                .render('#paypal-button-container')
+                .catch((err) => {
+                  console.error('PayPal Buttons failed to render')
+                })
+            } else {
+              console.log('The funding source is ineligible')
+            }
+          }
+        </script>
                 
                 
                 <!-- <h1 class="section-heading">Past Lectures</h1> -->
             <br>
             </div>
             
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div id="youmax" class="youmax">
+          
             </div>
-            </div>
-            <script>
-               $("#youmax").youmax({
-                  //apiKey:"AIzaSyBRYSnSL1UYBVuSkV_2bxigKEsNd7Pdnl0",
-                  apiKey:"AIzaSyAlhAqP5RS7Gxwg_0r_rh9jOv_5WfaJgXw",
-                  clientId:"237485577723-lndqepqthdb3lh4gec2skvpfaii9sgh0.apps.googleusercontent.com",
-                youtube_playlist_videos:[
-                    {
-                        url:"https://www.youtube.com/playlist?list=PLv55gZhH0M2WpCs8HleEf9v7bI0djt0LL",
-                        name:"Logos Retreat 2014",
-                        selected: true
-                    },
-                    {
-                        url:"https://www.youtube.com/playlist?list=PLv55gZhH0M2X6Sss3PBNJDk7fKwLSUi4A",
-                        name:"Logos Retreat 2013",
-
-                    }
-                ],
-                
-                channel:"https://www.youtube.com/user/stmaypitt",
-                vimeoAccessToken:"eba568e542d445e983b2a9369bb9117c",
-                //vimeoAccessToken:"fb86169313df3f09803409547a4e4a78",
-                displayVideo:"inline",
-                alwaysUseDropdown:false,
-                skin:"trend",
-                maxResults:6,
-                maxContainerWidth:950,
-                autoPlayVideo:true,
-                displayFirstVideoOnLoad:false,
-                linkNewPages:true,
-                searchBoxScope:"channel",
-                videoProtocol:"https:",
-                autoLoadComments: false,
-                alignPopupToTop: true,
-                commentOrder:"relevance", //time|relevance
-                //featuredVideo:'https://vimeo.com/172490277',
-                //featuredVideo:'https://vimeo.com/133396066',
-                playlistSearchFile:'./json/searchlist.json',
-                userWebsite:"http://www.codehandling.com",
-                videoMode:"wide",
-                shareLink:"youtube",
-                facebookAppId:"",
-                widgetMode:false,
-                showTitleInVideoPlayer:false,
-                playlistAction:"showvideos",
-                viewCountType:"abbr",
-                likeCommentCountType:"abbr",
-                showEvents:true,
-                loadMode:"paginate-bottom", //paginate-sides, paginate-bottom
-                hideHeader:false,
-                hideNavigation:false,
-                hideComments:false,
-                //loadButtonSize:"large",
-                videoPlayerTheme:"light",
-                showTextInsteadOfIcons:false,
-                loadButtonSize:"large",
-                headerCountType:"abbr",
-                //minVideoContainerHeight:310,
-                translatorFile:"./json/translation.json",
-                oneColumnThumbnailWidth:'90%',
-                oneColumnThumbnailLeftRightMargin:'5%',
-                advertisementFile:"./json/advertisement.json",
-                tabStyle:"wire",
-                //For Block Tabs
-                tabBackgroundColor:"#f5f5f5",
-                tabTextColor:"#929090",
-                tabHoverBackgroundColor:"rgba(106, 106, 106, 0.09)",
-                tabActiveBackgroundColor:"#ACACAC",
-                tabActiveTextColor:"white",
-                //For Wire Tabs
-                tabBackgroundColor:"green",
-                tabTextColor:"#929090",
-                tabHoverColor:"#4E4E4E",
-                tabActiveBackgroundColor:"green",
-                tabActiveTextColor:"green",
-                //Youmax Background Color
-                youmaxBackgroundColor:"#fff",
-                //Load More Buttons
-                loadmoreButtonBackgroundColor:"rgb(212, 212, 212)",
-                loadmoreButtonTextColor:"#666",
-                loadmoreButtonHoverBackgroundColor:"#383838",
-                loadmoreButtonHoverTextColor:"white",
-                //Grid colors
-                gridItemBackgroundColor:"white",
-                gridItemSeparatorColor:"#e2e2e2",
-            });
-	</script>
+          
     </div>
 
     <hr>
