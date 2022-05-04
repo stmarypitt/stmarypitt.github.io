@@ -161,7 +161,7 @@
                             </div> -->
 		</div>
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h1 class="section-heading">Winter Youth Retreat</h1>
+                <!-- <h1 class="section-heading">Winter Youth Retreat</h1>
                 <p>Join us for our 11th Annual Winter Youth retreat under the blessing of H.G. Bishop Karas. The retreat is hosted by Fr. Bishoy Mikhail, Fr. Daniel Nakhla, and St. Mary's Coptic Orthodox Church in Pittsburgh, PA.</p>
 
                 <p>Theme: Unshaken Faith<br>
@@ -265,8 +265,8 @@
                 <p>To get directions to Seven Springs, click <a target = "_blank" href="https://www.google.com/maps/dir//Seven+Springs+Mountain+Resort/@40.0229768,-79.2998919,17z/data=!3m1!4b1!4m5!3m4!1s0x89cad17abd9a35e5:0xe64df0643e194e61!8m2!3d40.0229768!4d-79.2977032">here</a> and enter your point of origin! </p>
                 <div class = "mapView">
                 <iframe src="https://www.google.com/maps/embed/v1/place?q=Seven+Springs+Mountain+Resort&key=AIzaSyDSa4DjxNqBmJhT3m4Dt6x2EAZw1d_rEr4" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-                    
-                <!--
+                
+               
                 <h1 class="section-heading">Family Retreat</h1>
                 <p>Our family retreat normally takes place in May. Come back in March/April for more information!</p> -->
                 <!-- <p>This year's family retreat is taking place at Antiochian Village from May 26 - May 28.
@@ -299,90 +299,65 @@
 
                 <p>To sign up, please email <a href="mailto:eastcoastretreat@gmail.com">eastcoastretreat@gmail.com</a>, with your name, phone number, # of people desired in room, and requested roommates. You will only be placed with you requested roommates if each person in the room requests one another. Then, please pay using the link above. The deadline to register is Apr. 8, 2018.</p> -->
                 <h1 class="section-heading">The Logos Retreat</h1>
-                <p>The Logos Retreat is an annual retreat (usually taking place in May) for college youth and young professionals, which generally features H.G. Bishop Angelos as a guest speaker. Check back around Summer 2019 to register for next year's retreat! In the mean time, enjoy His Grace's sermons from previous years.</p>
-                <!--<p>The ninth annual Logos Retreat will take place from June 16 to 18th, at <a target="_blank" href = "http://www.7springs.com/">Seven Springs</a>. We will meet at the resort at 5:00 PM. Click <a target="" href = "#sign">here</a> to sign up, or scroll down. It is for college/graduate students and young professionals, and will feature Fr. Mauritius as the guest speaker. To view the schedule, as well as other relevant information, please download our informational <a href="logosbooklet.pdf">booklet</a>.</p>
+               
+                <p>The annual Logos Retreat will take place from June 3rd to 5th, at <a target="_blank" href = "https://www.nemacolin.com/">Nemacolin Woodlands Resort</a>. It is for college/graduate students and young professionals, and will feature Fr. Joseph Abraham as the guest speaker.</p>
+                <div class="register-wrapper"><a class="register" href="https://forms.gle/hP1RaSmMCu85LmAx5" target="_blank">REGISTER HERE</a></div>
+		<p> After registering, please pay below. </p>
+			
+                <h1 class="section-heading">Theme: Offer Your Bodies as a Living Sacrifice</h1>
+           
+                <h1 class="section-heading">Early Bird Pricing</h1>
+                <p> Three people to a room: $135 each.
+                <br> Two people to a room: $155 each.
+                <br> One person to a room: $225 each.</p>
                 
-                <h1 class="section-heading">Theme: Rein in the Brain</h1>
-                <p>Ever feel like you have everything else on your mind except Christ?</p>
-                <p>"Casting down arguments and every high thing that exalts itself against the knowledge of God, bringing every thought into captivity to the obedience of Christ." - II Corinthians 10:5 NKJV</p>
+                <!--<p>Registration is now closed. If you've registered, but haven't yet paid, you can pay below. Please email <a href="mailto:thelogosretreat@gmail.com">thelogosretreat@gmail.com</a> with any questions!</p> !-->
+               
+                <script src="https://www.paypal.com/sdk/js?client-id=AZaJAoBSpvBlJqjt0-Qz9fUmS6MBlfNMctYFxoJPXgxm2hXqS9-1evtcYo8JswRuvjzHVjAa5bj64QXv&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+		  <script>
+		    function initPayPalButton() {
+		      paypal.Buttons({
+			style: {
+			  shape: 'rect',
+			  color: 'gold',
+			  layout: 'vertical',
+			  label: 'paypal',
+
+			},
+
+			createOrder: function(data, actions) {
+			  return actions.order.create({
+			    purchase_units: [
+				    {"description":"Logos - Triple","amount":{"currency_code":"USD","value":135}},
+			    	    {"description":"Logos - Double","amount":{"currency_code":"USD","value":155}},
+			    	    {"description":"Logos - Single","amount":{"currency_code":"USD","value":225}}]
+			  });
+			},
+
+			onApprove: function(data, actions) {
+			  return actions.order.capture().then(function(orderData) {
+
+			    // Full available details
+			    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+			    // Show a success message within this page, e.g.
+			    const element = document.getElementById('paypal-button-container');
+			    element.innerHTML = '';
+			    element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+			    // Or go to another URL:  actions.redirect('thank_you.html');
+
+			  });
+			},
+
+			onError: function(err) {
+			  console.log(err);
+			}
+		      }).render('#paypal-button-container');
+		    }
+		    initPayPalButton();
+		  </script>
                 
-                <p>To get directions to Seven Springs, click <a target = "_blank" href="https://www.google.com/maps/dir//Seven+Springs+Mountain+Resort,+777+Water+Wheel+Dr,+Champion,+PA+15622/@40.0229768,-79.2998919,17z/data=!4m15!1m6!3m5!1s0x89cb3b27d40a1f73:0x22efd9b5bf42cb!2sAntiochian+Village+Conference+Center!8m2!3d40.300072!4d-79.152685!4m7!1m0!1m5!1m1!1s0x89cb3b27d40a1f73:0x22efd9b5bf42cb!2m2!1d-79.152685!2d40.300072">here</a> and enter your point of origin! </p>
-                <div class = "mapView">
-                <iframe src="https://www.google.com/maps/embed/v1/place?q=Seven+Springs+Mountain+Resort,+777+Water+Wheel+Dr,+Champion,+PA+15622&key=AIzaSyDSa4DjxNqBmJhT3m4Dt6x2EAZw1d_rEr4" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-                
-                <h1 class="section-heading">Pricing</h1>
-                <p> Four people to a room: $150 each.
-                <br> Three people to a room: $175 each.
-                <br> Two people to a room: $235 each.
-                <br> One person to a room: $410 each.
-                <br> All meals are included.</p>
-                
-                <h1 id="sign" class="section-heading">Sign Up</h1>
-                <p>Registration is now closed. If you've registered, but haven't yet paid, you can pay below. Please email <a href="mailto:thelogosretreat@gmail.com">thelogosretreat@gmail.com</a> with any questions!</p>
-                <form name="sentMessage" action = "https://formspree.io/thelogosretreat@gmail.com" method="POST" novalidate>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name." name = "PersonName">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Email Address</label>
-                            <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address." name = "_replyto">
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Pricing / Roommates</label>
-                            <textarea rows="1" class="form-control" placeholder="# of People in Room (1/2/3/4)" id="message" required data-validation-required-message="Please enter a message." name = "Number of People in Room"></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Pricing / Roommates</label>
-                            <textarea rows="1" class="form-control" placeholder="$ paying (410/235/175/150)" id="message" required data-validation-required-message="Please enter a message." name = "Price Being Paid"></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <div class="row control-group">
-                        <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Pricing / Roommates</label>
-                            <textarea rows="1" class="form-control" placeholder="Desired Roommates" id="message" required data-validation-required-message="Please enter a message." name = "Roommates"></textarea>
-                            <p class="help-block text-danger"></p>
-                        </div>
-                    </div>
-                    <br>
-                    <div id="success"></div>
-                    <div class="row">
-                        <div class="form-group col-xs-12">
-                            <input type="text" name="_gotcha" style="display:none" />
-                            <input type="hidden" name="_next" value="logosthanks.html" />
-                            <button type="submit" class="btn btn-default">Sign Up!</button>
-                        </div>
-                    </div>
-                </form>
-                
-                <h1 id="sign" class="section-heading">Pay:</h1>
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="NUHUYNYH59L6C">
-<table>
-<tr><td><input type="hidden" name="on0" value="Room Size">Room Size</td></tr><tr><td><select name="os0">
-<option value="Single">Single $410.00 USD</option>
-<option value="Double">Double $235.00 USD</option>
-<option value="Triple">Triple $175.00 USD</option>
-<option value="Quad.">Quad. $150.00 USD</option>
-</select> </td></tr>
-</table>
-<input type="hidden" name="currency_code" value="USD">
-                    <br>
-<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form> -->
                 
                 <!-- <h1 class="section-heading">Past Lectures</h1> -->
             <br>
